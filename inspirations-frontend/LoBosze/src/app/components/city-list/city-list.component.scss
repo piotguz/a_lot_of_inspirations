@@ -1,0 +1,39 @@
+.cities-container {
+    padding: 2rem;
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+}
+.button-container{
+    align-items: center;
+    margin-left: 2rem;
+}
+.city-name {
+    padding:2rem;
+}
+  
+  /* Create a custom checkbox */
+.city-checkbox {
+    top: 0.5rem;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    vertical-align: middle;
+  }
+
+.calendars-container {
+    padding: 2rem;
+    display: inline-block;
+}
+.image {
+    position:relative;
+    width:160px;
+    height:200px;
+    display:inline-block;
+    margin: 1rem;
+}
+.image img {
+    width:100%;
+    vertical-align:top;
+}

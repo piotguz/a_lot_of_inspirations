@@ -1,0 +1,61 @@
+<div style="background:  rgba(9,52,121,.85);padding:4rem;max-width:80%;margin: 0 auto">
+    <mat-tab-group dynamicHeight>
+        <mat-tab label="Departure" style="color: rgba(193, 205, 224, 0.85)">
+            <form >
+            <mat-form-field style="color: rgba(193, 205, 224, 0.85)">
+                <mat-label>Departure city</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="city">
+                <mat-option *ngFor="let city of allCities" [value]="city.city">
+                    {{city.city}}
+                </mat-option>
+                </mat-select>
+            </mat-form-field>
+            </form>
+        </mat-tab>
+        <mat-tab label="Destination" style="color: rgba(193, 205, 224, 0.85)">
+                <mat-accordion>
+                        <div *ngFor="let tile of tiles">
+                        <mat-expansion-panel>
+                          <mat-expansion-panel-header style="background: rgba(193, 205, 224, 0.85)">
+                            <mat-panel-title>
+                                <div style=" color:rgb(23, 3, 109); align-items:center;width: 100%">
+                                    <div style="text-align: center;">{{tile.country}}</div>
+                                </div>
+                            </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div  style="padding: 0.5rem">
+                                    <div *ngFor="let city of tile.cities">
+                                      <input type="checkbox" class="city-checkbox" [(ngModel)]="city.checked">   
+                                      <span class="city-name">{{city.city}}</span>
+                                    </div>
+                                </div>    
+                        </mat-expansion-panel>
+                        </div>
+                    </mat-accordion>
+        </mat-tab>
+        <mat-tab label="Date" style="color: rgba(193, 205, 224, 0.85)">
+            <div class="calendars-container">        
+                <div style="background-color: rgba(193, 205, 224, 0.85)">
+                    <mat-form-field >
+                    <input matInput [matDatepicker]="departurePicker" placeholder="Choose departure date" 
+                            (dateInput)="addDepartureDate($event)" (dateChange)="addDepartureDate($event)">
+                    <mat-datepicker-toggle matSuffix [for]="departurePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #departurePicker></mat-datepicker>
+                    </mat-form-field>
+                </div> 
+                <div style="background-color: rgba(193, 205, 224, 0.85)">
+                    <mat-form-field>
+                    <input matInput [matDatepicker]="returnPicker" placeholder="Choose return date" 
+                            (dateInput)="addReturnDate($event)" (dateChange)="addReturnDate($event)">
+                    <mat-datepicker-toggle matSuffix [for]="returnPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #returnPicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="button-container">
+                <input class="btn btn-primary" type="submit" value="Submit" (click)="postConnections()">
+            </div>            
+        </mat-tab>
+    </mat-tab-group>
+ 
+</div>
