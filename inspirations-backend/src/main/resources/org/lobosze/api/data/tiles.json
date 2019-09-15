@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Culture and history",
+    "description": "Discover cultural and historical places that will leave you speechless!",
+    "countries": [
+      {
+        "name": "France",
+        "description": "Country of great tradition in art, food and great wine!",
+        "cities": [
+          {"name": "Paris"}, {"name": "Colmar"}
+        ]
+      },
+      {
+        "name": "Spain",
+        "description": "Ready for bull fights and sunny beaches?",
+        "cities": [
+          {"name": "Madrit"}, {"name": "Sevilla"}
+        ]
+      }
+    ]
+  }
+]
